@@ -402,3 +402,4 @@ unrecognised tool slugs · divide-by-zero guards · unknown program/role lookups
 - **This project does not constitute legal advice.** Have your privacy policy, consent
   language, and data-retention policy reviewed by a qualified professional before
   collecting real user data in production.
+ 
