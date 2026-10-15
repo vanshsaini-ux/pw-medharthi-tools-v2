@@ -1,0 +1,188 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   GLOBAL RESET & THEME
+======================================== */
+
+:root {
+  color-scheme: light;
+  background: #fcfbff;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fcfbff;
+  color: #0f1830;
+}
+
+/* Prevent default sizing issues */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Images and media should remain responsive */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* Text selection */
+::selection {
+  background-color: #e8d9ff;
+  color: #0a0f1e;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 3px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-space-grotesk), sans-serif;
+    letter-spacing: -0.01em;
+    color: #0f1830;
+  }
+
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-inter), Arial, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-size: inherit;
+  }
+}
+
+/* ========================================
+   COMPONENT STYLES
+======================================== */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg bg-amber-500 px-6 py-3 text-[0.95rem] font-semibold text-navy-950 shadow-sm transition duration-150 hover:bg-amber-600 hover:shadow active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-navy-700/25 bg-white px-6 py-3 text-[0.95rem] font-semibold text-navy-900 transition duration-150 hover:border-navy-700/40 hover:bg-navy-700/[0.03] active:translate-y-px;
+  }
+
+  .btn-ghost-on-dark {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-white/25 px-6 py-3 text-[0.95rem] font-semibold text-white transition duration-150 hover:border-white/40 hover:bg-white/10;
+  }
+
+  .card {
+    @apply rounded-xl2 border border-navy-700/10 bg-white shadow-card;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-navy-700/20 bg-white px-3.5 py-2.5 text-base text-navy-900 shadow-sm transition duration-150 placeholder:text-navy-700/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/25;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-widest text-amber-600;
+  }
+}
+
+/* ========================================
+   HOMEPAGE HELPERS
+======================================== */
+
+/* Full-width page sections */
+.full-width-section {
+  width: 100%;
+  max-width: none;
+}
+
+/* Subtle pastel background for the homepage */
+.homepage-background {
+  background-color: #fcfbff;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(196, 181, 253, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(125, 211, 252, 0.12),
+      transparent 40%
+    );
+}
+
+/* Consistent interactive transitions */
+.interactive-card {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+@media (hover: hover) {
+  .interactive-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    overflow-wrap: break-word;
+  }
+}
