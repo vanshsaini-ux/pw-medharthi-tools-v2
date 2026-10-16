@@ -1,17 +1,11 @@
 import Image from 'next/image';
 import {
-  MessageCircle,
-  Phone,
   Heart,
   ExternalLink,
 } from 'lucide-react';
 
 const BRAND = process.env.NEXT_PUBLIC_BRAND_NAME || 'PW Medharthi';
 const PRIVACY_URL = process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL || '#';
-
-const CONTACT_NUMBER = (
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '918130166658'
-).replace(/[^0-9]/g, '');
 
 const GITHUB_URL = 'https://github.com/kishorkumarbairagi69';
 
@@ -139,24 +133,6 @@ export default function Footer() {
                   <Icon size={20} />
                 </a>
               ))}
-
-              <a
-                href={`https://wa.me/${CONTACT_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact us on WhatsApp"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-green-500/40 hover:bg-green-500/10 hover:text-green-400"
-              >
-                <MessageCircle size={18} />
-              </a>
-
-              <a
-                href={`tel:+${CONTACT_NUMBER}`}
-                aria-label="Call us"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition hover:border-amber-500/40 hover:bg-amber-500/10 hover:text-amber-400"
-              >
-                <Phone size={18} />
-              </a>
             </div>
           </div>
 
